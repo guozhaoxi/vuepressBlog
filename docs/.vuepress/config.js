@@ -28,9 +28,9 @@ module.exports = {
       ]
     },
     sidebarDepth: 2,
-    repo: '123',
+    repo: 'guozhaoxi/vuepressBlog',
     repoLabel: 'Github',
-    docsRepo: '',
+    docsRepo: 'guozhaoxi',
     docsDir: 'docs',
     docsBranch: 'master',
     editLinks: true,

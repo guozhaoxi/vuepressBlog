@@ -110,3 +110,7 @@ cosnt prd = {
 
 HanMeiMei.setState(prd)
 ```
+
+::: tip 声明
+本博客的设计模式相关的文章均是学习了掘金小册[《javaScript 设计模式核心原理与应用实践》](https://juejin.im/book/5c70fc83518825428d7f9dfb '《javaScript 设计模式核心原理与应用实践》')和腾讯大佬曾探写的[《javaScript 设计模式与开发实践》](http://product.dangdang.com/23698327.html '《javaScript 设计模式与开发实践》')一书。
+:::
