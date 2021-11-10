@@ -120,6 +120,13 @@ function getStudyRoutes () {
       ]
     },
     {
+      title: 'TypeScript',
+      collapsable: false,
+      children: [
+        'typescript/first',
+      ]
+    },
+    {
       title: '设计模式',
       collapsable: false,
       children: [
