@@ -134,6 +134,13 @@ function getStudyRoutes () {
         'design-mode/watcher',
       ]
     },
+    {
+      title: '微信小程序',
+      collapsable: false,
+      children: [
+        'miniprogram/first',
+      ]
+    },
   ]
 }
 
@@ -177,6 +184,13 @@ function getIdeaRoutes () {
       collapsable: false,
       children: [
         'job/first',
+      ]
+    },
+    {
+      title: '关于人生的思考',
+      collapsable: false,
+      children: [
+        'family/first',
       ]
     }
   ]
