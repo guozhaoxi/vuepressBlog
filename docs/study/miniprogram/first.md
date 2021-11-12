@@ -1,4 +1,4 @@
-# 微信小程序空间
+# 微信小程序基础用法
 
 ## wxs的应用
 
@@ -85,3 +85,22 @@ module.exports = {
    <slot name="panel"></slot>
  </view>
 ```
+
+## behavior
+```js
+const behavior = Behavior({
+    properties: {
+        service: Object
+    }
+})
+
+export default behavior
+
+
+import behavior from "../behavior/behavior";
+Component({
+behaviors: [behavior]
+})
+```
+
+关于微信小程序的behavior，我觉得就和vue框架的mixin混入是一样的，他可以抽离一些不同组件共有的逻辑，然后引入到组件中使用。
