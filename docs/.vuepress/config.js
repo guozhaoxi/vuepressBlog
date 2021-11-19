@@ -18,16 +18,13 @@ module.exports = {
     nav: [
       { text: '首页', link: '/' },
       { text: '学习', link: '/study/index' },
-      { text: '工作', link: '/work/index' },
+      { text: '问题', link: '/question/index' },
       { text: '文档', link: '/document/index' },
       { text: '读书', link: '/read/index' },
-      { text: '游记', link: '/travel/index' },
-      { text: '矫情', link: '/idea/index' },
-      { text: '陈可爱', link: '/cll/index' },
     ],
     lastUpdated: '上次更新',
     sidebar: {
-      '/work/': getWorkRoutes(),
+      '/question/': getQuestionRoutes(),
       '/study/': getStudyRoutes(),
       '/document/': getDocumentRoutes(),
       '/read/': getReadRoutes(),
@@ -53,16 +50,13 @@ module.exports = {
   ]
 }
 
-function getWorkRoutes () {
+function getQuestionRoutes () {
   return [
     {
-      title: '石家庄金冠医院',
+      title: '第三方库',
       collapsable: false,
       children: [
-        'jinguan/first',
-        'jinguan/second',
-        'jinguan/third',
-        'jinguan/fourth'
+        'library/error',
       ]
     }
   ]
@@ -220,6 +214,13 @@ function getCllRoutes () {
       collapsable: false,
       children: [
         'yujian/first'
+      ]
+    },
+    {
+      title: '点滴',
+      collapsable: false,
+      children: [
+          'diary/diary'
       ]
     }
   ]
