@@ -58,6 +58,13 @@ function getQuestionRoutes () {
       children: [
         'library/error',
       ]
+    },
+    {
+      title: '开发者工具',
+      collapsable: false,
+      children: [
+        'idea/error',
+      ]
     }
   ]
 }
