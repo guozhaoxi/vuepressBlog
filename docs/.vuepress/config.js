@@ -104,6 +104,7 @@ function getStudyRoutes () {
       collapsable: false,
       children: [
         'react/first',
+        'react/component'
       ]
     },
     {
