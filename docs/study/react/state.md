@@ -47,6 +47,10 @@ this.setState({number: 1}, () => {
 
 - shouldComponentUpdate生命周期可以通过判断前后state变化来决定组件需不需要更新，需要更新饭绘true,否则返回false。
 
+React同一级别**更新优先级**关系是：
+
+flushSync中的setState > 正常执行上下文中setState > setTimeout, Promise中的setState。
+
 
 ## 函数组件中的state
 
@@ -196,3 +200,4 @@ export default function Index() {
 - setState有专门监听state变化的回调函数callback，可以获取最新state; 但是在函数组件中，只能通过useEffect来执行state变化引起的副作用。
 
 - setState在底层逻辑上主要是和老state进行合并处理，而useState更倾向于重新赋值。
+
