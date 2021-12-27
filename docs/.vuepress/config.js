@@ -105,7 +105,8 @@ function getStudyRoutes () {
       children: [
         'react/first',
         'react/component',
-        'react/state'
+        'react/state',
+        'react/props'
       ]
     },
     {
