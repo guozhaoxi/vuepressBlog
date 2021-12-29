@@ -106,7 +106,8 @@ function getStudyRoutes () {
         'react/first',
         'react/component',
         'react/state',
-        'react/props'
+        'react/props',
+        'react/lifeCycle'
       ]
     },
     {

@@ -298,7 +298,7 @@ function Index() {
 
 ## 实践加深印象
 
-### 实现一个简单的```<Form> <FormItem>```组件
+### 实现一个简单的`<Form> <FormItem>`组件
 
 - ```<Form>``` 负责管理表单的状态
 - ```<FormItem>``` 负责管理```<Input>```输入框组件
