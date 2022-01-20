@@ -71,34 +71,9 @@ function getQuestionRoutes () {
 
 function getStudyRoutes () {
   return [
-    {
-      title: 'Html5',
-      collapsable: false,
-      children: [
-        'html/first',
-      ]
-    },
-    {
-      title: 'CSS',
-      collapsable: false,
-      children: [
-        'css/first',
-      ]
-    },
-    {
-      title: 'JavaScript',
-      collapsable: false,
-      children: [
-        'js/first',
-      ]
-    },
-    {
-      title: 'Node',
-      collapsable: false,
-      children: [
-        'node/first',
-      ]
-    },
+  
+   
+    
     {
       title: 'React',
       collapsable: false,
@@ -115,22 +90,12 @@ function getStudyRoutes () {
       collapsable: false,
       children: [
         'vue/first',
+        'vue/standard',
+        'vue/login',
+        'vue/layout'
       ]
     },
-    {
-      title: 'Webpack',
-      collapsable: false,
-      children: [
-        'webpack/first',
-      ]
-    },
-    {
-      title: 'TypeScript',
-      collapsable: false,
-      children: [
-        'typescript/first',
-      ]
-    },
+   
     {
       title: '设计模式',
       collapsable: false,

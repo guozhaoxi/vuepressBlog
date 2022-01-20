@@ -114,3 +114,31 @@ constructor作用：
 - 初始化state,可以用来截取路由参数，赋值给state。
 - 对类组件的事件做一些处理，比如绑定this, 防抖，节流等。
 - 对类组件进行一些必要生命周期的劫持，渲染劫持。
+
+#### 2 getDerivedStateFromProps
+
+```javascript
+getDerivedStateFromProps(nextProps, prevState)
+```
+
+两个参数：
+- nextProps 父组件新传递的props
+- prevState 组件在此次更新前的state
+
+这个生命周期用于，在初始化和更新阶段，接受父组件的props数据，可以对props进行格式化，过滤等操作；返回值将作为新的state合并到state中，供给视图渲染消费。
+
+只要组件更新，就会执行`getDerivedStateFromProps`,不管是props改变，还是setState,或者是forceUpdate。
+
+getDerivedStateFromProps作用：
+
+- 代替 componentWillMount 和 componentWillReceiveProps
+- 组件初始化或更新时，将props映射到state
+- 返回值与state合并完，可以作为shouldComponentUpdate的第二个参数newState,可以判断是否需要渲染组件。
+
+#### componentWillMount
+componentWillMount 还是用来做一些初始化操作，但是不建议在这个生命周期写，毕竟未来很有可能取缔它。
+
+#### componentWillReceiveProps
+
+- 用来监听父组件是否执行render
+- 可以用来接受props改变，组件可以
