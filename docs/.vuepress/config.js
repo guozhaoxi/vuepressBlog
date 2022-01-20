@@ -19,18 +19,13 @@ module.exports = {
       { text: '首页', link: '/' },
       { text: '学习', link: '/study/index' },
       { text: '问题', link: '/question/index' },
-      { text: '文档', link: '/document/index' },
-      { text: '读书', link: '/read/index' },
+      { text: '文档', link: '/document/index' }
     ],
     lastUpdated: '上次更新',
     sidebar: {
       '/question/': getQuestionRoutes(),
       '/study/': getStudyRoutes(),
       '/document/': getDocumentRoutes(),
-      '/read/': getReadRoutes(),
-      '/travel/': getTravelRoutes(),
-      '/idea/': getIdeaRoutes(),
-      '/cll/': getCllRoutes()
     },
     sidebarDepth: 2,
     repo: 'guozhaoxi/vuepressBlog',
@@ -71,9 +66,6 @@ function getQuestionRoutes () {
 
 function getStudyRoutes () {
   return [
-  
-   
-    
     {
       title: 'React',
       collapsable: false,
@@ -114,59 +106,6 @@ function getStudyRoutes () {
   ]
 }
 
-function getReadRoutes () {
-  return [
-    {
-      title: '思考，快与慢',
-      collapsable: false,
-      children: [
-        'fastandslow/first',
-      ]
-    }
-  ]
-}
-
-
-function getTravelRoutes () {
-  return [
-    {
-      title: '云南丽江古城',
-      collapsable: false,
-      children: [
-        'lijiang/first',
-      ]
-    },
-    {
-      title: '张北草原天路',
-      collapsable: false,
-      children: [
-        'zhangbei/first',
-      ]
-    }
-  ]
-}
-
-
-function getIdeaRoutes () {
-  return [
-    {
-      title: '关于求职跳槽',
-      collapsable: false,
-      children: [
-        'job/first',
-      ]
-    },
-    {
-      title: '关于人生的思考',
-      collapsable: false,
-      children: [
-        'family/first',
-      ]
-    }
-  ]
-}
-
-
 function getDocumentRoutes () {
   return [
     {
@@ -175,28 +114,6 @@ function getDocumentRoutes () {
       children: [
         'mingdu/driver',
         'mingdu/admin',
-      ]
-    }
-  ]
-}
-
-
-
-
-function getCllRoutes () {
-  return [
-    {
-      title: '遇见',
-      collapsable: false,
-      children: [
-        'yujian/first'
-      ]
-    },
-    {
-      title: '点滴',
-      collapsable: false,
-      children: [
-          'diary/diary'
       ]
     }
   ]
