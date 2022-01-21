@@ -6,7 +6,7 @@ meta:
 # heroImage: https://api.ixiaowai.cn/mcapi/mcapi.php
 heroImage: /images/kebi.jpeg
 actionText: 开始阅读 →
-actionLink: ../study/js/first.html
+actionLink: ../vue/first.html
 features:
     - title: 工作
       details: 让我们的生活更加充实
