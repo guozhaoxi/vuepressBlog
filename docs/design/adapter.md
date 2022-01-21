@@ -15,7 +15,6 @@ export default class HttpUtils {
               })
         })
   }
-
   static post(url,data) {
     return new Promise((resolve, reject) => {
           fetch(url, {
@@ -146,5 +145,3 @@ Ajax(type, url, data, success, failed) {
 	AjaxAdapter(type, url, data, success, failed)
 }
 ``` 
-
-本文完

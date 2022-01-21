@@ -17,15 +17,21 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      { text: '学习', link: '/study/index' },
-      { text: '问题', link: '/question/index' },
-      { text: '文档', link: '/document/index' }
+      { text: 'Vue', link: '/vue/first' },
+      { text: 'React', link: '/react/first' },
+      { text: 'Typescript', link: '/typescript/first' },
+      { text: '微信小程序', link: '/miniprogram/first' },
+      { text: '设计模式', link: '/design/watcher'}
+      // { text: '问题', link: '/question/index' },
+      // { text: '文档', link: '/document/index' }
     ],
     lastUpdated: '上次更新',
     sidebar: {
-      '/question/': getQuestionRoutes(),
-      '/study/': getStudyRoutes(),
-      '/document/': getDocumentRoutes(),
+      '/vue': getVueRoutes(),
+      '/react': getReactRoutes(),
+      '/typescript': getTypescriptRoutes(),
+      '/miniprogram': getMpRoutes(),
+      '/design': getDesignRoutes()
     },
     sidebarDepth: 2,
     repo: 'guozhaoxi/vuepressBlog',
@@ -42,6 +48,74 @@ module.exports = {
       serviceWorker: true,
       updatePopup: true
     }]
+  ]
+}
+
+function getDesignRoutes() {
+  return [
+    {
+      title: '设计模式',
+      collapsable: false,
+      children: [
+        'design/watcher',
+        'design/adapter'
+      ]
+    }
+  ]
+}
+
+function getMpRoutes() {
+  return [
+    {
+      title: '微信小程序',
+      collapsable: false,
+      children: [
+        'miniprogram/first',
+      ]
+    }
+  ]
+}
+
+function getTypescriptRoutes() {
+  return [
+    {
+      title: 'Typescript',
+      collapsable: false,
+      children: [
+        'typescript/first',
+      ]
+    }
+  ]
+}
+
+function getVueRoutes() {
+  return [
+    {
+      title: 'Vue',
+      collapsable: false,
+      children: [
+        'vue/first',
+        'vue/standard',
+        'vue/login',
+        'vue/layout'
+      ]
+    }
+  ]
+}
+
+function getReactRoutes() {
+  return [
+    {
+      title: 'React',
+      collapsable: false,
+      children: [
+        'react/first',
+        'react/component',
+        'react/state',
+        'react/props',
+        'react/lifeCycle'
+      ]
+    },
   ]
 }
 

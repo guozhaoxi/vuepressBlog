@@ -1,7 +1,6 @@
 # 观察者模式
 
 > 观察者模式定义了一种一对多的依赖关系，让多个观察者对象同时监听一个目标对象，当目标对象的状态发生改变时，会通知所有观察者对象，使他们能够自动更新。
-
 在观察者模式里，有两个关键角色是一定要出现的——发布者和订阅者。用面向对象的方式表达的话，就是要有两个类。
 
 思考一下发布者的类应该具备哪些能力？首先应该可以拉群（添加订阅者），然后是艾特所有人（通知所有订阅者），最后应该还具备一个踢人的能力（移除订阅者）。我们来定义一下这个发布者类。
@@ -96,18 +95,15 @@ class DevloperObserver extends Observer {
 const LiLei = new DevloperObserver();
 const ZhangSan = new DevloperObserver();
 const LiSi = new DevloperObserver();
-
 const HanMeiMei = new PrdPublisher();
 HanMeiMei.add(LiLei);
 HanMeiMei.add(ZhangSan);
 HanMeiMei.add(LiSi);
-
 cosnt prd = {
   qd: '写一个页面',
   hd: '写一个接口',
   cs: '测试一下页面'
 }
-
 HanMeiMei.setState(prd)
 ```
 
