@@ -17,7 +17,7 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      { text: 'Vue', link: '/vue/first' },
+      { text: 'Vue', link: '/vue/standard' },
       { text: 'React', link: '/react/first' },
       { text: 'Typescript', link: '/typescript/first' },
       { text: '微信小程序', link: '/miniprogram/first' },
@@ -94,7 +94,6 @@ function getVueRoutes() {
       title: 'Vue',
       collapsable: false,
       children: [
-        'vue/first',
         'vue/standard',
         'vue/login',
         'vue/layout'
