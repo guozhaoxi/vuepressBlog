@@ -21,7 +21,8 @@ module.exports = {
       { text: 'React', link: '/react/first' },
       { text: 'Typescript', link: '/typescript/first' },
       { text: '微信小程序', link: '/miniprogram/first' },
-      { text: '设计模式', link: '/design/watcher'}
+      { text: '设计模式', link: '/design/watcher'},
+      { text: '数据结构与算法', link: '/structure/queue'}
       // { text: '问题', link: '/question/index' },
       // { text: '文档', link: '/document/index' }
     ],
@@ -31,7 +32,8 @@ module.exports = {
       '/react': getReactRoutes(),
       '/typescript': getTypescriptRoutes(),
       '/miniprogram': getMpRoutes(),
-      '/design': getDesignRoutes()
+      '/design': getDesignRoutes(),
+      '/structure': getStructureRoutes()
     },
     sidebarDepth: 2,
     repo: 'guozhaoxi/vuepressBlog',
@@ -48,6 +50,18 @@ module.exports = {
       serviceWorker: true,
       updatePopup: true
     }]
+  ]
+}
+
+function getStructureRoutes() {
+  return [
+    {
+      title: '数据结构与算法',
+      collapsable: false,
+      children: [
+        'structure/queue',
+      ]
+    }
   ]
 }
 
