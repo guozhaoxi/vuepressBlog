@@ -56,9 +56,10 @@ module.exports = {
 function getStructureRoutes() {
   return [
     {
-      title: '数据结构与算法',
+      title: '数据结构',
       collapsable: false,
       children: [
+        'structure/stack',
         'structure/queue',
       ]
     }
