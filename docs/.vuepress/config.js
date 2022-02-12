@@ -61,6 +61,7 @@ function getStructureRoutes() {
       children: [
         'structure/stack',
         'structure/queue',
+        'structure/erfen',
       ]
     }
   ]
