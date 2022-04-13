@@ -1,6 +1,6 @@
-# 第十章：富文本与markdown综合处理之创建文章
+# 富文本与markdown综合处理之创建文章
 
-## 10-1：开篇
+## 开篇
 
 本章中我们的核心业务就是 **编辑文章**。
 
@@ -19,7 +19,7 @@
 
 那么明确好了对应的内容之后，接下来我们就去进行对应的实现即可
 
-## 10-2：辅助业务：创建文章基本结构实现
+## 辅助业务：创建文章基本结构实现
 
 那么首先我们先去完成 **创建文章** 的基本结构，主要分成三部分：
 
@@ -76,9 +76,9 @@
    
    ```
 
-   
 
-## 10-3：编辑库选择标准
+
+## 编辑库选择标准
 
 对于现在的前端编辑库（`markdown` 与 富文本）而言，如果仅从功能上来去看的话，那么其实都是相差无几的。
 
@@ -89,10 +89,10 @@
 如果你现在想要去选择一个编辑库，那么可以从以下几点中进行选择：
 
 1. [开源协议](https://www.runoob.com/w3cnote/open-source-license.html)：其中尽量选择 `MIT` 或者 `BSD` 协议的开源项目
-   <img src="第十章：富文本与markdown综合处理之创建文章.assets/image-20211006194630048.png" alt="image-20211006194630048" style="zoom:67%;" />
+   <img src="./nodes/markdown/image-20211006194630048.png" alt="image-20211006194630048" style="zoom:67%;" />
 2. 功能：功能需要满足基本需求
 3. `issue`：通过 `issue` 查看作者对该库的维护程度
-   ![image-20211006194612197](第十章：富文本与markdown综合处理之创建文章.assets/image-20211006194612197.png)
+   ![image-20211006194612197](./nodes/markdown/image-20211006194612197.png)
 4. 文档：文档越详尽越好，最好提供了中文文档（英文好的可以忽略）
 5. 国产的：或许你 `朋友的朋友的朋友` 就是这个库的作者
 
@@ -104,22 +104,22 @@
 那么最后给大家推荐一些编辑器库，大家可以进行一些参考：
 
 1. `markdown` 编辑器：
-   1. [tui.editor](https://github.com/nhn/tui.editor)：`Markdown` 所见即所得编辑器-高效且可扩展，使用MIT开源协议。
-   2. [editor](https://github.com/lepture/editor)：纯文本 `markdown` 编辑器
-   3. [editor.md](https://github.com/pandao/editor.md)：开源可嵌入的在线`markdown`编辑器(组件)，基于 `CodeMirror` & `jQuery` & `Marked`。国产
-   4. [markdown-here](https://github.com/adam-p/markdown-here)：谷歌开源，但是已经 **多年不更新** 了
-   5. [stackedit](https://github.com/benweet/stackedit)：基于`PageDown`，`Stack Overflow`和其他Stack Exchange站点使用的`Markdown`库的功能齐全的开源Markdown编辑器。**两年未更新了**
-   6. [markdown-it](https://github.com/markdown-it/markdown-it)：可配置语法，可添加、替换规则。**挺长时间未更新了**
+    1. [tui.editor](https://github.com/nhn/tui.editor)：`Markdown` 所见即所得编辑器-高效且可扩展，使用MIT开源协议。
+    2. [editor](https://github.com/lepture/editor)：纯文本 `markdown` 编辑器
+    3. [editor.md](https://github.com/pandao/editor.md)：开源可嵌入的在线`markdown`编辑器(组件)，基于 `CodeMirror` & `jQuery` & `Marked`。国产
+    4. [markdown-here](https://github.com/adam-p/markdown-here)：谷歌开源，但是已经 **多年不更新** 了
+    5. [stackedit](https://github.com/benweet/stackedit)：基于`PageDown`，`Stack Overflow`和其他Stack Exchange站点使用的`Markdown`库的功能齐全的开源Markdown编辑器。**两年未更新了**
+    6. [markdown-it](https://github.com/markdown-it/markdown-it)：可配置语法，可添加、替换规则。**挺长时间未更新了**
 2. 富文本编辑器：
-   1. [wangEditor](https://github.com/wangeditor-team/wangEditor)：国产、文档详尽、更新快速
-   2. [tinymce](https://github.com/tinymce/tinymce)：对 `IE6+` 和 `Firefox1.5+` 都有着非常良好的支持
-   3. [quill](https://github.com/quilljs/quill)：代码高亮功能、视频加载功能、公式处理比较强。
-   4. [ckeditor5](https://github.com/ckeditor/ckeditor5)：编辑能力强
-   5. [wysiwyg-editor](https://froala.com/wysiwyg-editor/)：**收费的** ， 就是牛
+    1. [wangEditor](https://github.com/wangeditor-team/wangEditor)：国产、文档详尽、更新快速
+    2. [tinymce](https://github.com/tinymce/tinymce)：对 `IE6+` 和 `Firefox1.5+` 都有着非常良好的支持
+    3. [quill](https://github.com/quilljs/quill)：代码高亮功能、视频加载功能、公式处理比较强。
+    4. [ckeditor5](https://github.com/ckeditor/ckeditor5)：编辑能力强
+    5. [wysiwyg-editor](https://froala.com/wysiwyg-editor/)：**收费的** ， 就是牛
 
 以上列举出的编辑器，大家可以进行一些参考
 
-## 10-4：新建文章：markdown 实现
+## 新建文章：markdown 实现
 
 我们通过 [tui.editor](https://github.com/nhn/tui.editor) 实现 `markdown` 的编辑功能：
 
@@ -208,7 +208,7 @@
 
 
 
-## 10-5：新建文章：markdown 文章提交
+## 新建文章：markdown 文章提交
 
 1. 在 `api/article` 中，定义创建文章接口
 
@@ -227,7 +227,7 @@
 
 2. 因为 `markdown` 或者是 富文本 最终都会处理提交事件，所以我们可以把这两件事情合并到一个模块中实现：
 
-3. 创建 `article-create/components/commit.js` 
+3. 创建 `article-create/components/commit.js`
 
    ```js
    import { createArticle } from '@/api/article'
@@ -284,7 +284,7 @@
    }
    ```
 
-## 10-6：新建文章：markdown 文章编辑
+## 新建文章：markdown 文章编辑
 
 1. 在 `article-detail` 中点击编辑按钮，进入创建文章页面
 
@@ -403,9 +403,9 @@
    }
    ```
 
-   
 
-## 10-7：新建文章：富文本 实现
+
+## 新建文章：富文本 实现
 
 富文本我们使用 [wangEditor](https://github.com/wangeditor-team/wangEditor)，所以我们得先去下载 [wangEditor](https://github.com/wangeditor-team/wangEditor)
 
@@ -577,9 +577,9 @@ npm i wangeditor@4.7.6
    }
    ```
 
-   
 
-## 10-8：总结
+
+## 总结
 
 本章节中我们的核心重点就是 **编辑库** 的选择
 

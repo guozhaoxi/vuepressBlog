@@ -1,6 +1,6 @@
-# 第五章：后台项目前端综合解决方案之通用功能开发
+# 后台项目前端综合解决方案之通用功能开发
 
-## 5-01：开篇
+## 开篇
 
 在后台项目的前端开发之中，存在着很多的通用业务功能，并且存在着一定的技术难度。
 
@@ -21,7 +21,7 @@
 
 相信大家完成了本章的学习之后，对于这些功能无论是从 **原理上** 还是从 **实现上** 都可以做到 **了然于胸** 的目标
 
-## 5-02：国际化实现原理
+## 国际化实现原理
 
 先来看一个需求：
 
@@ -59,14 +59,14 @@
 </script>
 ```
 
- 总结：
+总结：
 
 1. 通过一个变量来 **控制** 语言环境
 2. 所有语言环境下的数据源要 **预先** 定义好
 3. 通过一个方法来获取 **当前语言** 下 **指定属性** 的值
 4. 该值即为国际化下展示值
 
-## 5-03：基于 vue-i18n V9  的国际化实现方案分析
+## 基于 vue-i18n V9  的国际化实现方案分析
 
 在 `vue` 的项目中，我们不需要手写这么复杂的一些基础代码，可以直接使用 [vue-i18n](https://vue-i18n.intlify.dev/) 进行实现（注意：**`vue3` 下需要使用 `V 9.x` 的 `i18n`**）
 
@@ -85,7 +85,7 @@
    npm install vue-i18n@next
    ```
 
-   
+
 
 2. 创建 `i18n/index.js` 文件
 
@@ -161,7 +161,7 @@
 2. 导入 `el-locale` 语言包
 3. 创建自定义语言包
 
-## 5-04：方案落地：封装  langSelect  组件
+## 方案落地：封装  langSelect  组件
 
 1. 定义 `store/app.js`
 
@@ -189,7 +189,7 @@
    
    ```
 
-   
+
 
 2. 在 `constant` 中定义常量
 
@@ -198,9 +198,9 @@
    export const LANG = 'language'
    ```
 
-   
 
-3. 创建 `components/LangSelect/index` 
+
+3. 创建 `components/LangSelect/index`
 
    ```vue
    <template>
@@ -300,10 +300,10 @@
    </style>
    
    ```
-   
-   
 
-## 5-05：方案落地：element-plus 国际化处理
+
+
+## 方案落地：element-plus 国际化处理
 
 截止到目前，我们的国际化内容已经基本功能已经处理完成了。接下来需要处理的就是对应的语言包，有了语言包就可以实现整个项目中的所有国际化处理了。
 
@@ -355,15 +355,15 @@ import en from 'element-plus/lib/locale/lang/en'
    }
    ```
 
-   
 
 
 
-## 5-06：方案落地：自定义语言包国际化处理
+
+## 方案落地：自定义语言包国际化处理
 
 处理完 `element` 的国际化内容之后，接下来我们来处理 **自定义语言包**。
 
-自定义语言包我们使用了 `commonJS` 导出了一个对象，这个对象就是所有的 **自定义语言对象** 
+自定义语言包我们使用了 `commonJS` 导出了一个对象，这个对象就是所有的 **自定义语言对象**
 
 > 大家可以在 **资料/lang** 中获取到所有的语言包
 
@@ -392,11 +392,11 @@ import en from 'element-plus/lib/locale/lang/en'
      }
    }
    ```
-   
-   
 
 
-## 5-07：方案落地：处理项目国际化内容
+
+
+## 方案落地：处理项目国际化内容
 
 在处理好了国际化的语言包之后，接下来我们就可以应用国际化功能到我们的项目中
 
@@ -473,7 +473,7 @@ export const validatePassword = () => {
 
 ```
 
- **`navbar` 区域**
+**`navbar` 区域**
 
 `layout/components/navbar`
 
@@ -515,7 +515,7 @@ const handleSetLanguage = lang => {
 
 
 
-## 5-08：方案落地：sidebar 与 面包屑 区域的国际化处理
+## 方案落地：sidebar 与 面包屑 区域的国际化处理
 
 **sidebar 区域**
 
@@ -589,7 +589,7 @@ import { generateTitle } from '@/utils/i18n'
 
 
 
-## 5-09：方案落地：国际化缓存处理
+## 方案落地：国际化缓存处理
 
 我们希望在 **刷新页面后，当前的国际化选择可以被保留**，所以想要实现这个功能，那么就需要进行 **国际化的缓存处理**
 
@@ -612,7 +612,7 @@ function getLanguage() {
 }
 ```
 
-修改 `createI18n` 的 `locale` 为 `getLanguage()` 
+修改 `createI18n` 的 `locale` 为 `getLanguage()`
 
 ```js
 const i18n = createI18n({
@@ -623,7 +623,7 @@ const i18n = createI18n({
 
 
 
-## 5-10：国际化方案总结
+## 国际化方案总结
 
 国际化是前端项目中的一个非常常见的功能，那么在前端项目中实现国际化主要依靠的就是 `vue-i18n` 这个第三方的包。
 
@@ -679,7 +679,7 @@ const i18n = createI18n({
 
 那么下面我们就分别来去处理这两块主题对应的内容
 
-## 5-11：动态换肤原理分析
+## 动态换肤原理分析
 
 接下来我们来处理 **动态换肤** 功能
 
@@ -718,7 +718,7 @@ const i18n = createI18n({
 
 那么下面我们就分别来去处理这两块主题对应的内容
 
-## 5-12：动态换肤实现方案分析
+## 动态换肤实现方案分析
 
 明确好了原理之后，接下来我们就来理一下咱们的实现思路。
 
@@ -726,8 +726,8 @@ const i18n = createI18n({
 
 1. 动态换肤的关键是修改 `css 变量` 的值
 2. 换肤需要同时兼顾
-   1. `element-plus` 
-   2. 非 `element-plus` 
+    1. `element-plus`
+    2. 非 `element-plus`
 
 那么根据以上关键信息，我们就可以得出对应的实现方案
 
@@ -735,7 +735,7 @@ const i18n = createI18n({
 2. 根据新值修改 `element-plus`  主题色
 3. 根据新值修改非 `element-plus`  主题色
 
-## 5-13：方案落地：创建  ThemeSelect 组件
+## 方案落地：创建  ThemeSelect 组件
 
 查看完成之后的项目我们可以发现，`ThemeSelect` 组件将由两部分组成：
 
@@ -790,7 +790,7 @@ const handleSetTheme = command => {}
 import ThemePicker from '@/components/ThemeSelect/index'
 ```
 
-## 5-14：方案落地：创建  SelectColor 组件
+## 方案落地：创建  SelectColor 组件
 
 在有了 `ThemeSelect ` 之后，接下来我们来去处理颜色选择的组件 `SelectColor`，在这里我们会用到 `element` 中的 `el-color-picker` 组件
 
@@ -801,7 +801,7 @@ import ThemePicker from '@/components/ThemeSelect/index'
 
 那么下面咱们先来看第一步：**完成 `SelectColor` 弹窗展示的双向数据绑定**
 
-创建 `components/ThemePicker/components/SelectColor.vue` 
+创建 `components/ThemePicker/components/SelectColor.vue`
 
 ```vue
 <template>
@@ -908,7 +908,7 @@ const handleSetTheme = command => {
 
 ```
 
- 完成双向数据绑定之后，我们来处理第二步：**把选中的色值进行本地缓存**
+完成双向数据绑定之后，我们来处理第二步：**把选中的色值进行本地缓存**
 
 缓存的方式分为两种：
 
@@ -997,7 +997,7 @@ const comfirm = async () => {
 
 ```
 
-## 5-15：方案落地：处理 element-plus 主题变更原理与步骤分析
+## 方案落地：处理 element-plus 主题变更原理与步骤分析
 
 对于 `element-plus` 的主题变更，相对比较复杂，所以说整个过程我们会分为三部分：
 
@@ -1026,7 +1026,7 @@ const comfirm = async () => {
 3. 在原样式中，利用正则替换新样式
 4. 把替换后的样式写入到 `style` 标签中
 
-## 5-16：方案落地：处理 element-plus 主题变更
+## 方案落地：处理 element-plus 主题变更
 
 创建 `utils/theme` 工具类，写入两个方法
 
@@ -1218,7 +1218,7 @@ const comfirm = async () => {
 
 
 
-## 5-17：方案落地：element-plus 新主题的立即生效
+## 方案落地：element-plus 新主题的立即生效
 
 到目前我们已经完成了 `element-plus` 的主题变更，但是当前的主题变更还有一个小问题，那就是：**在刷新页面后，新主题会失效**
 
@@ -1245,7 +1245,7 @@ generateNewStyle(store.getters.mainColor).then(newStyleText => {
 
 
 
-## 5-18：方案落地：自定义主题变更
+## 方案落地：自定义主题变更
 
 自定义主题变更相对来说比较简单，因为 **自己的代码更加可控**。
 
@@ -1298,7 +1298,7 @@ export default getters
 但是我们这样设定之后，整个自定义主题变更，还存在两个问题：
 
 1. `menuBg` 背景颜色没有变化
-   <img src="第五章：后台项目前端综合解决方案之通用功能开发.assets/image-20210925203000626.png" alt="image-20210925203000626" style="zoom:33%;" />
+   <img src="./nodes/general/image20210925203000626.png"  style="zoom:33%;" />
 
 这个问题是因为咱们的 `sidebar` 的背景色未被替换，所以我们可以在 `layout/index` 中设置 `sidebar` 的 `backgroundColor`
 
@@ -1360,11 +1360,11 @@ export default getters
 
 ```
 
-## 5-19：自定义主题方案总结
+## 自定义主题方案总结
 
 那么到这里整个自定义主题我们就处理完成了。
 
-对于 **自定义主题而言**，核心的原理其实就是 **修改`scss`变量来进行实现主题色变化** 
+对于 **自定义主题而言**，核心的原理其实就是 **修改`scss`变量来进行实现主题色变化**
 
 明确好了原理之后，对后续实现的步骤就具体情况具体分析了。
 
@@ -1373,7 +1373,7 @@ export default getters
 
 那么在之后大家遇到 **自定义主题** 的处理时，就可以按照我们所梳理的方案进行处理了。
 
-## 5-20：screenfull 原理及方案分析
+## screenfull 原理及方案分析
 
 接下来我们来看 `screenfull （全屏）` 功能实现
 
@@ -1385,7 +1385,7 @@ export default getters
 
 1. [`Document.exitFullscreen()`](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/exitFullscreen)：该方法用于请求从全屏模式切换到窗口模式
 2. [`Element.requestFullscreen()`](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/requestFullScreen)：该方法用于请求浏览器（user agent）将特定元素（甚至延伸到它的后代元素）置为全屏模式
-   1. 比如我们可以通过 `document.getElementById('app').requestFullscreen()` 在获取 `id=app` 的 `DOM` 之后，把该区域置为全屏
+    1. 比如我们可以通过 `document.getElementById('app').requestFullscreen()` 在获取 `id=app` 的 `DOM` 之后，把该区域置为全屏
 
 但是该方法存在一定的小问题，比如：
 
@@ -1400,17 +1400,17 @@ export default getters
 整体的方案实现分为两步：
 
 1. 封装 `screenfull` 组件
-   1. 展示切换按钮
-   2. 基于 [screenfull](https://www.npmjs.com/package/screenfull) 实现切换功能
+    1. 展示切换按钮
+    2. 基于 [screenfull](https://www.npmjs.com/package/screenfull) 实现切换功能
 2. 在 `navbar` 中引入该组件
 
-## 5-21：方案落地：screenfull
+## 方案落地：screenfull
 
 明确好了方案之后，接下来我们就落地该方案
 
 **封装 `screenfull` 组件：**
 
-1. 下来依赖包  [screenfull](https://www.npmjs.com/package/screenfull) 
+1. 下来依赖包  [screenfull](https://www.npmjs.com/package/screenfull)
 
    ```
    npm i screenfull@5.1.0
@@ -1469,7 +1469,7 @@ import Screenfull from '@/components/Screenfull'
 
 
 
-## 5-22：headerSearch 原理及方案分析
+## headerSearch 原理及方案分析
 
 > 所谓 `headerSearch` 指 **页面搜索**
 
@@ -1493,11 +1493,11 @@ import Screenfull from '@/components/Screenfull'
 
 1. 创建 `headerSearch` 组件，用作样式展示和用户输入内容获取
 2. 获取所有的页面数据，用作被检索的数据源
-3. 根据用户输入内容在数据源中进行 [模糊搜索](https://fusejs.io/) 
+3. 根据用户输入内容在数据源中进行 [模糊搜索](https://fusejs.io/)
 4. 把搜索到的内容以 `select` 进行展示
 5. 监听 `select` 的 `change` 事件，完成对应跳转
 
-## 5-23：方案落地：创建 headerSearch 组件
+## 方案落地：创建 headerSearch 组件
 
 创建 `components/headerSearch/index` 组件：
 
@@ -1629,9 +1629,9 @@ console.log(searchPool)
 
 
 
-## 5-25：方案落地：对检索数据源进行模糊搜索
+## 方案落地：对检索数据源进行模糊搜索
 
-如果我们想要进行  [模糊搜索](https://fusejs.io/)  的话，那么需要依赖一个第三方的库  [fuse.js](https://fusejs.io/) 
+如果我们想要进行  [模糊搜索](https://fusejs.io/)  的话，那么需要依赖一个第三方的库  [fuse.js](https://fusejs.io/)
 
 1. 安装 [fuse.js](https://fusejs.io/)
 
@@ -1726,7 +1726,7 @@ console.log(searchPool)
 
 
 
-## 5-26：方案落地：数据源重处理，生成  searchPool
+## 方案落地：数据源重处理，生成  searchPool
 
 在上一小节，我们明确了最终我们期望得到数据源结构，那么接下来我们就对重新计算数据源，生成对应的 `searchPoll`
 
@@ -1810,7 +1810,7 @@ const querySearch = query => {
 }
 ```
 
-## 5-27：方案落地：渲染检索数据
+## 方案落地：渲染检索数据
 
 数据源处理完成之后，最后我们就只需要完成:
 
@@ -1848,7 +1848,7 @@ const querySearch = query => {
    
    ```
 
-   
+
 
 2. 完成对应跳转
 
@@ -1859,9 +1859,9 @@ const querySearch = query => {
    }
    ```
 
-   
 
-## 5-28：方案落地：剩余问题处理
+
+## 方案落地：剩余问题处理
 
 到这里我们的 `headerSearch` 功能基本上就已经处理完成了，但是还存在一些小 `bug` ，那么最后这一小节我们就处理下这些剩余的 `bug`
 
@@ -1956,7 +1956,7 @@ watch(isShow, val => {
 
 
 
-## 5-29：headerSearch 方案总结
+## headerSearch 方案总结
 
 那么到这里整个的 `headerSearch` 我们就已经全部处理完成了，整个 `headerSearch` 我们只需要把握住三个核心的关键点
 
@@ -1973,7 +1973,7 @@ watch(isShow, val => {
 
 对于这两块，我们依赖于 `fuse.js` 进行了实现，大大简化了我们的业务处理流程。
 
-## 5-30：tagsView 原理及方案分析
+## tagsView 原理及方案分析
 
 所谓 `tagsView` 可以分成两部分来去看：
 
@@ -1988,7 +1988,7 @@ watch(isShow, val => {
 
 那么现在我们忽略掉 `view`，现在只有一个要求：
 
-> 在 `view` 之上渲染这个 `tag` 
+> 在 `view` 之上渲染这个 `tag`
 
 仅看这一个要求，很简单吧。
 
@@ -2003,7 +2003,7 @@ watch(isShow, val => {
 
 这两个额外的功能。
 
-加上这两个功能之后可能会略显复杂，但是 [官网已经帮助我们处理了这个问题](https://next.router.vuejs.org/zh/guide/advanced/transitions.html#%E5%9F%BA%E4%BA%8E%E8%B7%AF%E7%94%B1%E7%9A%84%E5%8A%A8%E6%80%81%E8%BF%87%E6%B8%A1) 
+加上这两个功能之后可能会略显复杂，但是 [官网已经帮助我们处理了这个问题](https://next.router.vuejs.org/zh/guide/advanced/transitions.html#%E5%9F%BA%E4%BA%8E%E8%B7%AF%E7%94%B1%E7%9A%84%E5%8A%A8%E6%80%81%E8%BF%87%E6%B8%A1)
 
 所以 单看 `views` 也是一个很简单的功能。
 
@@ -2018,14 +2018,14 @@ watch(isShow, val => {
 
 1. 监听路由变化，组成用于渲染 `tags` 的数据源
 2. 创建 `tags` 组件，根据数据源渲染 `tag`，渲染出来的 `tags` 需要同时具备
-   1. 国际化 `title`
-   2. 路由跳转
+    1. 国际化 `title`
+    2. 路由跳转
 3. 处理鼠标右键效果，根据右键处理对应数据源
 4. 处理基于路由的动态过渡
 
 那么明确好了方案之后，接下来我们根据方案进行处理即可。
 
-## 5-31：方案落地：创建 tags 数据源
+## 方案落地：创建 tags 数据源
 
 `tags` 的数据源分为两部分：
 
@@ -2144,9 +2144,9 @@ watch(isShow, val => {
    
    ```
 
-   
 
-## 5-32：方案落地：生成 tagsView
+
+## 方案落地：生成 tagsView
 
 目前数据已经被保存到 `store` 中，那么接下来我们就依赖数据渲染 `tags`
 
@@ -2263,7 +2263,7 @@ watch(isShow, val => {
    }
    </style>
    ```
-   
+
 3. 在 `layout/index` 中导入
 
    ```vue
@@ -2280,7 +2280,7 @@ watch(isShow, val => {
 
 
 
-## 5-33：方案落地：tagsView 国际化处理
+## 方案落地：tagsView 国际化处理
 
 `tagsView` 的国际化处理可以理解为修改现有 `tags` 的 `title`。
 
@@ -2303,7 +2303,7 @@ watch(isShow, val => {
    }
    ```
 
-   
+
 
 2. 在 `appmain` 中监听语言变化
 
@@ -2326,9 +2326,9 @@ watch(isShow, val => {
    })
    ```
 
-   
 
-## 5-34：方案落地：contextMenu 展示处理
+
+## 方案落地：contextMenu 展示处理
 
 > [contextMenu](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/contextmenu_event) 为 鼠标右键事件
 
@@ -2444,10 +2444,10 @@ watch(isShow, val => {
    
    </script>
    ```
-   
-   
 
-## 5-35：方案落地：contextMenu 事件处理
+
+
+## 方案落地：contextMenu 事件处理
 
 对于 `contextMenu` 的事件一共分为三个：
 
@@ -2468,9 +2468,9 @@ watch(isShow, val => {
 
 2. 在 `store/app` 中，创建删除 `tags` 的 `mutations`，该 `mutations` 需要同时具备以下三个能力：
 
-   1. 删除 “右侧”
-   2. 删除 “其他”
-   3. 删除 “当前”
+    1. 删除 “右侧”
+    2. 删除 “其他”
+    3. 删除 “当前”
 
 3. 根据以上理论得出以下代码：
 
@@ -2537,9 +2537,9 @@ watch(isShow, val => {
    }
    ```
 
-   
 
-## 5-36：方案落地：处理 contextMenu 的关闭行为
+
+## 方案落地：处理 contextMenu 的关闭行为
 
 ```js
 /**
@@ -2563,7 +2563,7 @@ watch(visible, val => {
 
 
 
-## 5-37：方案落地：处理基于路由的动态过渡
+## 方案落地：处理基于路由的动态过渡
 
 [处理基于路由的动态过渡](https://next.router.vuejs.org/zh/guide/advanced/transitions.html#%E5%9F%BA%E4%BA%8E%E8%B7%AF%E7%94%B1%E7%9A%84%E5%8A%A8%E6%80%81%E8%BF%87%E6%B8%A1)  官方已经给出了示例代码，结合 `router-view` 和 `transition` 我们可以非常方便的实现这个功能
 
@@ -2618,7 +2618,7 @@ watch(visible, val => {
 
 
 
-## 5-38：tagsView 方案总结
+## tagsView 方案总结
 
 那么到这里关于 `tagsView` 的内容我们就已经处理完成了。
 
@@ -2636,7 +2636,7 @@ watch(visible, val => {
 
 
 
-## 5-39：guide 原理及方案分析
+## guide 原理及方案分析
 
 所谓 `guide` 指的就是 **引导页**
 
@@ -2663,10 +2663,10 @@ watch(visible, val => {
 基于 [driver.js](https://kamranahmed.info/driver.js/) 我们的实现方案如下：
 
 1. 创建 `Guide` 组件：用于处理 `icon` 展示
-2. 初始化 [driver.js](https://kamranahmed.info/driver.js/) 
-3. 指定 [driver.js](https://kamranahmed.info/driver.js/) 的 `steps` 
+2. 初始化 [driver.js](https://kamranahmed.info/driver.js/)
+3. 指定 [driver.js](https://kamranahmed.info/driver.js/) 的 `steps`
 
-## 5-40：方案落地：生成 Guide
+## 方案落地：生成 Guide
 
 1.  创建`components/Guide`
 
@@ -2695,9 +2695,9 @@ watch(visible, val => {
 
 
 
-## 5-41：方案落地：Guide 业务逻辑处理
+## 方案落地：Guide 业务逻辑处理
 
-1. 导入 [driver.js](https://kamranahmed.info/driver.js/) 
+1. 导入 [driver.js](https://kamranahmed.info/driver.js/)
 
    ```
    npm i driver.js@0.9.8
@@ -2806,7 +2806,7 @@ watch(visible, val => {
    }
    export default steps
    ```
-   
+
 4. 在 `guide` 中导入“步骤”
 
    ```vue
@@ -2899,9 +2899,9 @@ watch(visible, val => {
         />
     ```
 
-    
 
-## 5-42：总结
+
+## 总结
 
 那么到这里我们整个的 **后台项目前端综合解决方案之通用功能开发** 这一章节就算是处理完成了。
 

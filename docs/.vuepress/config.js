@@ -107,12 +107,20 @@ function getTypescriptRoutes() {
 function getVueRoutes() {
   return [
     {
-      title: 'Vue',
+      title: 'Vue3实现后台前端综合解决方案',
       collapsable: false,
       children: [
         'vue/standard',
         'vue/login',
-        'vue/layout'
+        'vue/layout',
+        'vue/general',
+        'vue/center',
+        'vue/userRole',
+        'vue/roleControl',
+        'vue/dynamicTable',
+        'vue/markdown',
+        'vue/deploy',
+        'vue/conclusion'
       ]
     }
   ]
@@ -176,7 +184,7 @@ function getStudyRoutes () {
         'vue/layout'
       ]
     },
-   
+
     {
       title: '设计模式',
       collapsable: false,
