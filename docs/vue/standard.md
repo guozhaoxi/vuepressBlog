@@ -271,7 +271,7 @@ module.exports = {
 
 比如说，我们来看这几条提交记录：
 
-![image-20210904203051754](第二章：标准化大厂编程规范解决方案之ESLint + Git Hooks .assets/image-20210904203051754.png)
+![image-20210904203051754](./nodes/standard/image-20210904203051754.png)
 
 你能够想象得到它们经历了什么吗？
 
@@ -529,7 +529,7 @@ PS：详细的 `HOOKS介绍` 可点击[这里](https://git-scm.com/docs/githooks
 
 **注意：确保保存为 `UTF-8` 的编码格式**，否则可能会出现以下错误：
 
-![image-20210710121456416](第二章：标准化大厂编程规范解决方案之ESLint + Git Hooks .assets/image-20210710121456416.png)
+![image-20210710121456416](./nodes/standard/image-20210710121456416.png)
 
 接下来我们来安装 `husky`
 
@@ -547,7 +547,7 @@ PS：详细的 `HOOKS介绍` 可点击[这里](https://git-scm.com/docs/githooks
    npx husky install
    ```
 
-   ![image-20210906202034156](第二章：标准化大厂编程规范解决方案之ESLint + Git Hooks .assets/image-20210906202034156.png)
+   ![image-20210906202034156](./nodes/standard/image-20210906202034156.png)
 
 3. 在 `package.json` 中生成 `prepare` 指令（ **需要 npm > 7.0 版本** ）
 
@@ -573,7 +573,7 @@ PS：详细的 `HOOKS介绍` 可点击[这里](https://git-scm.com/docs/githooks
    ```
 
 7. 此时的 `.husky` 的文件结构
-   ![image-20210710120228931]( 第二章：标准化大厂编程规范解决方案之ESLint + Git Hooks .assets/image-20210710120228931.png)
+   ![image-20210710120228931](./nodes/standard/image-20210710120228931.png)
 
 至此， 不符合规范的 commit 将不再可提交：
 
@@ -618,7 +618,7 @@ husky - commit-msg hook exited with code 1 (error)
 1. 执行 `npx husky add .husky/pre-commit "npx eslint --ext .js,.vue src"` 添加 `commit` 时的 `hook` （`npx eslint --ext .js,.vue src` 会在执行到该 hook 时运行）
 
 2. 该操作会生成对应文件 `pre-commit`：
-   ![image-20210906204043915](第二章：标准化大厂编程规范解决方案之ESLint + Git Hooks .assets/image-20210906204043915.png)
+   ![image-20210906204043915](./nodes/standard/image-20210906204043915.png)
 
 3. 关闭 `VSCode` 的自动保存操作
 
