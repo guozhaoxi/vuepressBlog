@@ -22,9 +22,8 @@ module.exports = {
       { text: 'Typescript', link: '/typescript/first' },
       { text: '微信小程序', link: '/miniprogram/first' },
       { text: '设计模式', link: '/design/watcher'},
-      { text: '数据结构与算法', link: '/structure/queue'}
-      // { text: '问题', link: '/question/index' },
-      // { text: '文档', link: '/document/index' }
+      { text: '数据结构与算法', link: '/structure/queue'},
+      { text: '服务器部署踩坑', link: '/service/pit' }
     ],
     lastUpdated: '上次更新',
     sidebar: {
@@ -33,7 +32,8 @@ module.exports = {
       '/typescript': getTypescriptRoutes(),
       '/miniprogram': getMpRoutes(),
       '/design': getDesignRoutes(),
-      '/structure': getStructureRoutes()
+      '/structure': getStructureRoutes(),
+      '/service': getServiceRoutes()
     },
     sidebarDepth: 2,
     repo: 'guozhaoxi/vuepressBlog',
@@ -50,6 +50,19 @@ module.exports = {
       serviceWorker: true,
       updatePopup: true
     }]
+  ]
+}
+
+
+function getServiceRoutes() {
+  return [
+    {
+      title: '服务器部署踩坑',
+      collapsable: false,
+      children: [
+        'service/pit',
+      ]
+    }
   ]
 }
 
