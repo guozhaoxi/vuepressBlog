@@ -61,6 +61,7 @@ function getServiceRoutes() {
       collapsable: false,
       children: [
         'service/pit',
+        'service/docker'
       ]
     }
   ]
